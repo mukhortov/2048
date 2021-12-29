@@ -37,27 +37,27 @@ struct BlockView: View {
   // LIGHT MODE
   fileprivate let colorPaletteLight: [(Color, Color)] = [
     // 2
-    (Color(red: 0.91, green: 0.87, blue: 0.83), Color(red: 0.42, green: 0.39, blue: 0.35)),
+    (Color(hex: 0xFDC09B), Color.white),
     // 4
-    (Color(red: 0.90, green: 0.86, blue: 0.76), Color(red: 0.42, green: 0.39, blue: 0.35)),
+    (Color(hex: 0xF3AD8C), Color.white),
     // 8
-    (Color(red: 0.93, green: 0.67, blue: 0.46), Color.white),
+    (Color(hex: 0xEA9A7E), Color.white),
     // 16
-    (Color(red: 0.94, green: 0.57, blue: 0.38), Color.white),
+    (Color(hex: 0xE0876F), Color.white),
     // 32
-    (Color(red: 0.95, green: 0.46, blue: 0.33), Color.white),
+    (Color(hex: 0xD77460), Color.white),
     // 64
-    (Color(red: 0.94, green: 0.35, blue: 0.23), Color.white),
+    (Color(hex: 0xCD6152), Color.white),
     // 128
-    (Color(red: 0.91, green: 0.78, blue: 0.43), Color.white),
+    (Color(hex: 0xC34E43), Color.white),
     // 256
-    (Color(red: 0.91, green: 0.78, blue: 0.37), Color.white),
+    (Color(hex: 0xBA3B34), Color.white),
     // 512
-    (Color(red: 0.90, green: 0.77, blue: 0.31), Color.white),
+    (Color(hex: 0xB02825), Color.white),
     // 1024
-    (Color(red: 0.91, green: 0.75, blue: 0.24), Color.white),
+    (Color(hex: 0xA71517), Color.white),
     // 2048
-    (Color(red: 0.91, green: 0.74, blue: 0.18), Color.white),
+    (Color(hex: 0x9D0208), Color.white),
   ]
 
   fileprivate let number: Int?
@@ -104,7 +104,7 @@ struct BlockView: View {
   fileprivate var colorPair: (Color, Color) {
     guard let number = number else {
       // Empty cell
-      return (colorScheme == .dark ? Color(hex: 0x17120A) : Color(red: 0.78, green: 0.73, blue: 0.68), Color.black)
+      return (colorScheme == .dark ? Color(hex: 0x17120A) : Color(hex: 0xFEFAE8), Color.black)
     }
 
     let colorPalette = colorScheme == .dark ? colorPaletteDark : colorPaletteLight

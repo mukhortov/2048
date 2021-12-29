@@ -117,7 +117,7 @@ struct GameView: View {
         .background(
           // Page background
           Rectangle()
-            .fill(colorScheme == .dark ? Color(hex: 0x17120A) : Color(red: 0.96, green: 0.94, blue: 0.90))
+            .fill(colorScheme == .dark ? Color(hex: 0x17120A) : Color(hex: 0xFEFAE8))
             .edgesIgnoringSafeArea(.all)
         )
       }

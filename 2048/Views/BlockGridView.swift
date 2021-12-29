@@ -118,8 +118,8 @@ struct BlockGridView: View {
     .frame(width: 320, height: 320, alignment: .center)
     .background(
       // Cells container
-      Rectangle()
-        .fill(colorScheme == .dark ? Color(hex: 0x251D12) : Color(red: 0.72, green: 0.66, blue: 0.63))
+      // dark mode alternative color 0x251D12
+      Rectangle().fill(colorScheme == .dark ? Color(hex: 0x20190F) : Color(hex: 0xF4F0D9))
     )
     .clipped()
     .cornerRadius(6)
