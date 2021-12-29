@@ -13,7 +13,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     window = NSWindow(
-      contentRect: NSRect(x: 0, y: 0, width: 600, height: 600),
+      // Window min and max size are set in GameMainHostingView.swift
+      contentRect: NSRect(x: 0, y: 0, width: 500, height: 500),
       styleMask: [.titled, .closable, .miniaturizable, .fullSizeContentView],
       backing: .buffered, defer: false
     )
@@ -34,6 +35,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @objc func newGame(_ sender: Any?) {
     (window.contentView as? GameMainHostingView)?.newGame()
   }
-  
-}
 
+}

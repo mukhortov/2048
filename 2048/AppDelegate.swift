@@ -20,6 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window!.rootViewController = UIHostingController(rootView: GameView().environmentObject(gameLogic))
     window!.makeKeyAndVisible()
 
+    // Set min and max size of the window
+    if #available(iOS 13.0, *) {
+      UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.forEach { windowScene in
+        windowScene.sizeRestrictions?.minimumSize = CGSize(width: 500, height: 500)
+        windowScene.sizeRestrictions?.maximumSize = CGSize(width: 500, height: 500)
+      }
+    }
+
     return true
   }
 

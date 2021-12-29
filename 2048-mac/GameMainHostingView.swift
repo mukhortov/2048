@@ -6,12 +6,13 @@
 import SwiftUI
 
 struct GameViewWrapper: View {
-
   fileprivate let gameLogic: GameLogic
 
   var body: some View {
     GameView()
       .environmentObject(gameLogic)
+      // Window min and max size
+      .frame(minWidth: 500, idealWidth: .infinity, minHeight: 500, idealHeight: .infinity)
   }
 
 }

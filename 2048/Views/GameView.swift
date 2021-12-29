@@ -45,6 +45,7 @@ struct GameView: View {
       bannerOffset: landscape
         ? .init(width: 32, height: 0)
         : .init(width: 0, height: 32),
+      // TODO: refactor this. Probably not needed
       showsBanner: landscape ? proxy.size.width > 720 : proxy.size.height > 550,
       containerAlignment: landscape ? .leading : .top
     )
