@@ -125,7 +125,7 @@ struct BlockView: View {
         .zIndex(1)
 
       Text(numberText)
-        .font(Font.system(size: fontSize).bold())
+        .font(Font.system(size: fontSize).weight(.light))
         .foregroundColor(colorPair.1)
         .id(textId!)
         // `zIndex` is important for removal transition

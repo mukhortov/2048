@@ -44,9 +44,9 @@ struct GameView: View {
     return LayoutTraits(
       bannerOffset: landscape
         ? .init(width: 32, height: 0)
-        : .init(width: 0, height: 32),
+        : .init(width: 0, height: (proxy.size.height - 400) / 2),
       // TODO: refactor this. Probably not needed
-      showsBanner: landscape ? proxy.size.width > 720 : proxy.size.height > 550,
+      showsBanner: landscape ? proxy.size.width > 720 : proxy.size.height > 400,
       containerAlignment: landscape ? .leading : .top
     )
   }
@@ -100,12 +100,11 @@ struct GameView: View {
       bind(self.layoutTraits(for: proxy)) { layoutTraits in
         ZStack(alignment: layoutTraits.containerAlignment) {
           if layoutTraits.showsBanner {
-            Text("2048")
-              .font(Font.system(size: 48).weight(.black))
-              .foregroundColor(Color(red:0.47, green:0.43, blue:0.40, opacity:1.00))
+            Text("Score: \(self.gameLogic.score)")
+              .font(Font.system(size: 18).weight(.light))
+              .foregroundColor(Color(white: colorScheme == .dark ? 1 : 0, opacity: 0.4))
               .offset(layoutTraits.bannerOffset)
           }
-
           ZStack(alignment: .center) {
             BlockGridView(
               matrix: self.gameLogic.blockMatrix,

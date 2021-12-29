@@ -32,6 +32,11 @@ final class GameLogic: ObservableObject {
     return _globalID
   }
 
+  fileprivate var _score = 0
+  var score: Int {
+    return _score
+  }
+
   init() {
     newGame()
   }
@@ -109,6 +114,7 @@ final class GameLogic: ObservableObject {
           var accPrefix = Array(acc.dropLast())
           var mergedBlock = item.1
           mergedBlock.number *= 2
+          _score += mergedBlock.number
           accPrefix.append((true, mergedBlock))
           return accPrefix
         } else {
